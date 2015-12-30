@@ -17,3 +17,11 @@ Splits a `text` element into a number of `tspan` elements so as to automatically
 <a href="#textwrap" name="textwrap">#</a> <b>textwrap</b>()
 
 Constructs new textwrap helper.
+
+
+## Also See
+
+Inspired or remixed or duplicated by:
+
+* [d3textwrap](https://github.com/vijithassar/d3textwrap)
+* [d3-circle-text](https://github.com/musically-ut/d3-circle-text)
