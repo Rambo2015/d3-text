@@ -8,7 +8,6 @@ If you use NPM, `npm install d3-text`. Otherwise, download the [latest release](
 
 ## API Reference
 
-YOUR API DOCUMENTATION HERE. Use bold for symbols (such as constructor and method names) and italics for instances. See the other D3 modules for examples.
 
 ### Textwrap
 
@@ -17,6 +16,20 @@ Splits a `text` element into a number of `tspan` elements so as to automatically
 <a href="#textwrap" name="textwrap">#</a> <b>textwrap</b>()
 
 Constructs new textwrap helper.
+
+```js
+var textwrap = d3_text.textwrap();
+```
+
+<a name="textwrap_bounds" href="#textwrap_bounds">#</a> <i>textwrap</i>.<b>bounds</b>({<i>bounds</i>})
+
+*bounds* is expected to be an object with the values `x`, `y`, `width`, and `height`.
+
+<a name="textwrap_padding" href="#textwrap_padding">#</a> <i>textwrap</i>.<b>padding</b>({<i>padding</i>})
+
+*padding* is expected to be an object with `x` and `y` values.
+
+
 
 
 ## Also See
