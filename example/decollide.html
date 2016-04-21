@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+  <script src="./d3.js" charset="utf-8"></script>
+  <script src="../build/d3-text.js"></script>
+</head>
+<body>
+  <script>
+
+  var width = 900
+  var height = 500
+  var data = [{"name": 1}, {"name": 2}, {"name": 3}, {"name": 4}];
+
+  function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+
+  function generateWords(count, bounds) {
+    words = d3.range(0,count,1).map(function(index) {
+
+      return { text: 'Abracadabra',
+               size: randInt(5,25),
+               x: randInt(0,bounds[0] - 20),
+               y: randInt(0, bounds[1] - 20)
+             };
+
+    });
+    return words;
+  }
+
+  var words = generateWords(100, [width, height]);
+
+  var decollider = d3_text.decollide()
+    .size([width, height])
+
+  var svg = d3.select('body').append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  svg.selectAll('.word')
+    .data(words).enter()
+    .append("text")
+    .attr("x", function(d) { return d.x; })
+    .attr("y", function(d) { return d.y; })
+    .attr("font-size", function(d) { return d.size; })
+    .text(function(d) { return d.text; })
+    .call(decollider)
+    // .attr("fill", "#668866");
+
+  // -----
+
+  </script>
+
+</body>
+</html>

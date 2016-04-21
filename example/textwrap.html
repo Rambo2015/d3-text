@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+  <script src="./d3.js" charset="utf-8"></script>
+  <script src="../build/d3-text.js"></script>
+</head>
+<body>
+  <script>
+
+  var width = 500
+  var height = 500
+
+  var svg = d3.select('body').append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  var texts = ["This is a long text. It goes on for one or more senteneces. Look a bird!"]
+
+  var textwrap = d3_text.textwrap()
+    .bounds({x:0, y:0, width: 40, height: 120});
+
+  svg.selectAll('text')
+    .data(texts)
+    .enter()
+    .append('text')
+    .attr('x', 40)
+    .attr('y', 40)
+    .text(function(t) { return t; })
+
+  svg.selectAll('text')
+    .each(function() { return textwrap(d3.select(this)); })
+
+  </script>
+
+</body>
+</html>
